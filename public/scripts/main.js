@@ -13,15 +13,59 @@ $(document).ready(function () {
 
   /*globals*/
   let countdown;
-  let countdownUpperLimit = 10;
-  let i = 0;
+  let countdownUpperLimit = 0;
+  let currentSecond = 0;
+  
+  /*helper functions*/
+  let countdownStart = () => {
+    if (currentSecond <= countdownUpperLimit) {
+      timerDisplay.html(currentSecond + 's');
+      fizzBuzzCheck(currentSecond);
+      currentSecond++;
 
+      if (currentSecond <= countdownUpperLimit) {
+        countdown = setTimeout(countdownStart, 1000);
+      } else {
+        setTimeout(resetGame, 1000);
+      }
+    }
+  }
+
+  let countdownReset = (countdown) => {
+    clearTimeout(countdown)
+  }
+
+  let resetGame = () => {
+    countdownUpperLimit = 0 ;
+    currentSecond = 0;
+    input.val("");
+    timerDisplay.html(currentSecond + "s");
+    fingersBox.css('color', 'white');
+    toesBox.css('color', 'white');
+  }
+
+  let fizzBuzzCheck = () => {
+    fingersBox.css('color', 'white');
+    toesBox.css('color', 'white');
+    if (currentSecond > 0) {
+      if (currentSecond % 5 === 0 && currentSecond % 3 === 0) {
+        fingersBox.css('color', 'red');
+        toesBox.css('color', 'red');
+      } else if (currentSecond % 5 === 0) {
+        fingersBox.css('color', 'red');
+      } else if (currentSecond % 3 === 0) {
+        toesBox.css('color', 'red');
+      } else {
+        console.log(currentSecond);
+      }
+    }
+  }
+  
   /*event handlers*/
   startbtn.on('click', () => {
-    if (!input.val()) {
-      input.val(10);
-    }
-    countdownUpperLimit = input.val();
+    currentSecond = 0;
+    countdownUpperLimit = input.val(); 
+    countdownReset(countdown);  
     countdownStart();
   });
 
@@ -33,62 +77,17 @@ $(document).ready(function () {
   restartbtn.on('click', () => {
     countdownReset(countdown);
     timerDisplay.html("0s");
-    i = 0;
+    currentSecond = 0;
+    countdownStart();
   });
 
   form.on('submit', (e) => {
+      currentSecond = 0;
+    countdownReset(countdown);
     e.preventDefault();
     countdownUpperLimit = input.val();
-    countdownInit();
+    countdownStart();
   });
 
-  /*helper functions*/
-  var countdownStart = () => {
-    if (i <= countdownUpperLimit) {
-      timerDisplay.html(i + 's');
-      fizzBuzzCheck(i);
-      i++;
-
-      if (i <= countdownUpperLimit) {
-        countdown = setTimeout(countdownStart, 1000);
-      } else {
-        setTimeout(resetGame, 1000);
-      }
-    }
-  }
-
-  var countdownInit = () => {
-    countdownStart();
-  }
-
-  var countdownReset = (countdown) => {
-    clearTimeout(countdown)
-  }
-
-  var resetGame = () => {
-    countdownUpperLimit = 0;
-    i = 0;
-    input.val("");
-    timerDisplay.html(i + "s");
-    fingersBox.css('color', 'white');
-    toesBox.css('color', 'white');
-  }
-
-  var fizzBuzzCheck = () => {
-    fingersBox.css('color', 'white');
-    toesBox.css('color', 'white');
-    if (i > 0) {
-      if (i % 5 === 0 && i % 3 === 0) {
-        fingersBox.css('color', 'red');
-        toesBox.css('color', 'red');
-      } else if (i % 5 === 0) {
-        fingersBox.css('color', 'red');
-      } else if (i % 3 === 0) {
-        toesBox.css('color', 'red');
-      } else {
-        console.log(i);
-      }
-    }
-  }
-
+  
 });
