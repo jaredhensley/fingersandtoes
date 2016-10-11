@@ -3,10 +3,6 @@
 fizzbuzz / timer coding challenge
 
 ```
-I chose to work with Gulp.js in order to utilize node.js style streams over the standard configuration you would use with a tool like Grunt. 
-```
-
-```
 This project includes gulp tasks for the following:
 
 bundling javascript/css
