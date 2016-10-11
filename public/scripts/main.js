@@ -1,18 +1,22 @@
 $(document).ready(function () {
 
-  //dom elements
+  /*cached dom elements*/
   let startbtn = $('#start-btn');
   let clearbtn = $('#clear-btn');
   let resetbtn = $('#reset-btn');
   let timerDisplay = $('.timer-display');
-  var input = $('#timer-input');
+  let form = $('form');
+  let input = $('#timer-input');
+  let fingersBox = $('.fingers-box');
+  let toesBox = $('.toes-box');
 
-  //globals 
+
+  /*globals*/
   let countdown;
   let countdownUpperLimit = 10;
   let i = 0;
 
-  //event handlers
+  /*event handlers*/
   startbtn.on('click', () => {
     if (!input.val()) {
       input.val(10);
@@ -30,14 +34,17 @@ $(document).ready(function () {
     resetGame();
   });
 
-  input.on('submit', () => {
-    countdownUpperLimit = this.val();
+  form.on('submit', (e) => {
+    e.preventDefault();
+    countdownUpperLimit = input.val();
+    countdownInit();
   });
 
-  //helper functions
+  /*helper functions*/
   var countdownStart = () => {
     if (i <= countdownUpperLimit) {
-      timerDisplay.html(i);
+      timerDisplay.html(i + 's');
+      fizzBuzzCheck(i);
       i++;
 
       if (i <= countdownUpperLimit) {
@@ -61,6 +68,24 @@ $(document).ready(function () {
     i = 0;
     input.val("");
     timerDisplay.html(i);
+    fingersBox.css('color', 'white');
+    toesBox.css('color', 'white');
+  }
+
+  var fizzBuzzCheck = () => {
+    if (i > 0) {
+      if (i % 5 === 0 && i % 3 === 0) {
+        fingersBox.css('color', 'red');
+        toesBox.css('color', 'red');
+      } else if (i % 5 === 0) {
+        fingersBox.css('color', 'red');
+      } else if (i % 3 === 0) {
+        toesBox.css('color', 'red');
+      } else {
+        fingersBox.css('color', 'white');
+        toesBox.css('color', 'white');
+      }
+    }
   }
 
 });
