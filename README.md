@@ -3,7 +3,11 @@
 fizzbuzz / timer coding challenge
 
 ```
-This project was created on a 24 hour timer using basic web technologies seen in a daily production enivronment. I chose to work with Gulp.js in order to utilize node.js style streams over the standard configuration you would use with a tool like Grunt.  This project includes gulp tasks for the following:
+I chose to work with Gulp.js in order to utilize node.js style streams over the standard configuration you would use with a tool like Grunt. 
+```
+
+```
+This project includes gulp tasks for the following:
 
 bundling javascript/css
 concat/uglify javascript/css
