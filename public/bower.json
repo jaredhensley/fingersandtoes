@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/jaredhensley/fingersandtoes",
+  "authors": [
+    "Jared Hensley <jahensle85@me.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.1"
+  }
+}
