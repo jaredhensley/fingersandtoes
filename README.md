@@ -18,9 +18,9 @@ These instructions will get you a copy of the project up and running on your loc
 What things you need to install the software and how to install them
 
 ```
-node
-npm
-gulp
+install node (google)
+install npm (google)
+install bower (npm install bower -g)
 ```
 
 ### Installing
@@ -31,22 +31,24 @@ clone project via terminal
 git clone https://github.com/jaredhensley/fingersandtoes
 ```
 
-navigate to project folder and npm install
+navigate to project folder and npm install (be patient!)
 
 ```
+cd fingersandtoes
 npm install
 ```
 
-navigate to project folder and bower install
+navigate to public folder and bower install
 
 ```
+cd fingersandtoes/public
 bower install 
 ```
 
 run project via gulp watch
 
 ```
-gulp watch
+gulp watch (be patient!)
 ```
 
 navigate to localhost:3000 in browser
