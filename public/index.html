@@ -4,12 +4,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Fingers And Toes!</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="dist/styles.css">
 </head>
 
 <body>
-  <h1>test</h1>
 
+  <div class="container">
+
+    <div class="board-wrapper">
+      <section class="title">
+        <h1>fingers & toes</h1>
+      </section>
+
+      <img id="board-logo" src="dist/images/feet.jpg" alt="">
+      <section class="state-boxes">
+        <div class="fingers-box">fingers</div>
+        <div class="timer-display">0</div>
+        <div class="toes-box">toes</div>
+      </section>
+
+      <section class="counter-wrapper">
+        <input type="text" id="timer-input" placeholder="enter a number...">
+        <button id="start-btn">start</button>
+        <button id="clear-btn">clear</button>
+        <button id="reset-btn">reset</button>
+      </section>
+    </div>
+
+  </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
   <script src="/dist/templates.js"></script>
   <script src="/dist/scripts.js"></script>

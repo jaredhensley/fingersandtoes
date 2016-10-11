@@ -1,24 +1,7 @@
 @import "./reset/_basic-reset.scss";
+@import "./state-boxes/_state-boxes.scss";
+@import "./counter-wrapper/_counter-wrapper.scss";
+@import "./colors/_colors.scss";
+@import "./globals/_globals.scss"
 
-$grey: #f7f7f7;
 
-
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 100vh;
-  background-color: $grey;
-}
-
-img {
-  margin-bottom: 3rem;
-}
-
-h1,
-p {
-  font-family: Helvectica, Arial, sans-sarif;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-}

@@ -1,0 +1,84 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*background-image: url('/images/cheap_diagonal_fabric.png');*/
+  background-color: #2c3e50;
+}
+
+.container {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media(max-width: 800px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.container .board-wrapper {
+  width: 100%;
+}
+
+.board-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #2c3e50;
+  border-radius: 5px;
+  background-color: white;
+}
+
+@media (max-width: 800px) {
+  .board-wrapper {
+    background-color: #2c3e50;
+  }
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+  text-transform: capitalize;
+  font-size: 2.5em;
+  color: #2c3e50;
+}
+
+@media (max-width: 800px) {
+.title {
+    width: 100%;
+    color: white;
+  }
+}
+
+#board-logo {
+  width: 300px;
+  border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+  #board-logo {
+    width: 100%;
+    boarder-radius: 0;
+  }
+}
+
+h1,
+p {
+  font-family: 'Roboto', Helvectica, Arial, sans-sarif;
+  font-weight: 300;
+}
