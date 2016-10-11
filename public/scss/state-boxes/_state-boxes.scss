@@ -4,7 +4,7 @@ section.state-boxes {
   width: 100%;
   font-size: 2.5em;
   text-transform: capitalize;
-  padding: 50px 0;
+  padding: 0 0 30px;
   color: white;
   font-family: 'Roboto', Helvectica, Arial, sans-sarif;
   .fingers-box {
@@ -32,7 +32,8 @@ section.state-boxes {
 @media (max-width: 800px) {
   section.state-boxes {
     flex-direction: column;
-    padding: 25px 0;
+    padding: 0 0 30px 0;
+    width: 80%;
     .fingers-box,
     .timer-display,
     .toes-box {
@@ -51,5 +52,11 @@ section.state-boxes {
       border-radius: 0;
       border: 1px solid white;
     }
+  }
+}
+
+@media (max-width: 480px) {
+  section.state-boxes {
+    width: 100%;
   }
 }
