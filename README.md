@@ -7,7 +7,7 @@ fizzbuzz / timer coding challenge
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 ### Prerequisities
 
-What things you need to install the software and how to install them
+Please make sure you have the following globally installed on your system before moving on:
 
 ```
 install node (google)

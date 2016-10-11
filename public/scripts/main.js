@@ -2,13 +2,13 @@ $(document).ready(function () {
 
   /*cached dom elements*/
   let startbtn = $('#start-btn');
-  let clearbtn = $('#clear-btn');
+  let restartbtn = $('#restart-btn');
   let resetbtn = $('#reset-btn');
-  let timerDisplay = $('.timer-display');
+  let timerDisplay = $('#timer-display');
   let form = $('form');
   let input = $('#timer-input');
-  let fingersBox = $('.fingers-box');
-  let toesBox = $('.toes-box');
+  let fingersBox = $('#fingers-box');
+  let toesBox = $('#toes-box');
 
 
   /*globals*/
@@ -25,13 +25,15 @@ $(document).ready(function () {
     countdownStart();
   });
 
-  clearbtn.on('click', () => {
-    resetGame();
-  });
-
   resetbtn.on('click', () => {
     countdownReset(countdown);
     resetGame();
+  });
+
+  restartbtn.on('click', () => {
+    countdownReset(countdown);
+    timerDisplay.html("0s");
+    i = 0;
   });
 
   form.on('submit', (e) => {
@@ -67,12 +69,14 @@ $(document).ready(function () {
     countdownUpperLimit = 0;
     i = 0;
     input.val("");
-    timerDisplay.html(i);
+    timerDisplay.html(i + "s");
     fingersBox.css('color', 'white');
     toesBox.css('color', 'white');
   }
 
   var fizzBuzzCheck = () => {
+    fingersBox.css('color', 'white');
+    toesBox.css('color', 'white');
     if (i > 0) {
       if (i % 5 === 0 && i % 3 === 0) {
         fingersBox.css('color', 'red');
@@ -82,8 +86,7 @@ $(document).ready(function () {
       } else if (i % 3 === 0) {
         toesBox.css('color', 'red');
       } else {
-        fingersBox.css('color', 'white');
-        toesBox.css('color', 'white');
+        console.log(i);
       }
     }
   }
