@@ -23,6 +23,7 @@ Please make sure you have the following globally installed on your system before
 install node (google)
 install npm (google)
 install bower (npm install bower -g)
+install gulp (npm install gulp -g)
 ```
 
 ### Installing
@@ -50,7 +51,7 @@ bower install
 run project via gulp watch
 
 ```
-gulp watch (be patient!)
+gulp watch (be patient! MAKE SURE YOU HAVE GULP GLOBALLY INSTALLED: SEE ABOVE)
 ```
 
 navigate to localhost:3000 in browser
