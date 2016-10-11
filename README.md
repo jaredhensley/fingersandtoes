@@ -5,6 +5,7 @@ fizzbuzz / timer coding challenge
 ```
 This project includes gulp tasks for the following:
 
+babel to transpile es6 syntax => es5 syntax
 bundling javascript/css
 concat/uglify javascript/css
 live reloading via gulp watch
@@ -59,10 +60,6 @@ navigate to localhost:3000 in browser
 ```
 google chrome --> http://localhost:3000
 ```
-
-## Running the tests
-
-Ran out of time for test creation and execution
 
 ## Built With
 
